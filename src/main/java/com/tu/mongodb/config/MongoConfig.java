@@ -35,7 +35,7 @@ public class MongoConfig {
         } catch (NoSuchBeanDefinitionException ignore) {
         }
 
-        mappingMongoConverter.setTypeMapper(new DefaultMongoTypeMapper("clazz"));
+        mappingMongoConverter.setTypeMapper(new DefaultMongoTypeMapper(null));
         return mappingMongoConverter;
     }
 }

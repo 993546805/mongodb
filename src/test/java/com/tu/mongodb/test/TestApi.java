@@ -44,7 +44,7 @@ public class TestApi {
      */
     @Test
     public void test_save_children() {
-        Person student = new Student("李四", 20, "123321200201021111", "01010101");
+        Person student = new Student("赵六", 20, "123321200201021114", "01010102");
         Person person = personRepository.save(student);
         logger.info("测试结果: {} ", person);
     }
@@ -65,9 +65,9 @@ public class TestApi {
      */
     @Test
     public void test_query() {
-        String idNumber = "123321200201021111";
-        Person person = personRepository.findByIdNumber(idNumber);
-        logger.info("查询结果 absent 是否为 Student 类: {}", person instanceof Student);
-        logger.info("测试结果: {}",JSON.toJSONString(person));
+        String idNumber = "123321200201021114";
+        Student student = personRepository.findByIdNumber(idNumber,Student.class);
+        logger.info("查询结果 absent 是否为 Student 类: {}", student instanceof Student);
+        logger.info("测试结果: {}",JSON.toJSONString(student));
     }
 }
