@@ -32,7 +32,7 @@ public class TestApi {
      */
     @Test
     public void test_insert() {
-        Person entity = new Person("张三", 20, "123321200201011111");
+        Person entity = new Person("王五", 20, "123321200201011113");
 
         Person person = personRepository.save(entity);
         logger.info("测试结果: {}", JSON.toJSONString(person));
@@ -67,7 +67,7 @@ public class TestApi {
     public void test_query() {
         String idNumber = "123321200201021111";
         Person person = personRepository.findByIdNumber(idNumber);
-        logger.info("查询结果 person 是否为 Student 类: {}", person instanceof Student);
+        logger.info("查询结果 absent 是否为 Student 类: {}", person instanceof Student);
         logger.info("测试结果: {}",JSON.toJSONString(person));
     }
 }
